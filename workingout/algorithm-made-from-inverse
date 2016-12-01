@@ -1,0 +1,35 @@
+l = 62
+function inverseStrToN(arr){
+  return arr.reverse().reduce(function(ans, n, i){
+    ans += n*Math.pow(l,i)
+    return ans
+  }, 0)
+}
+
+24 bac
+[2, 1, 3]
+3*(1) + 1*(3) + 2*(9)
+
+24 % 3 = 6r0
+shift [3]
+24 - 3*3^0 = 21
+
+(21 / 3) % 3 = 2r1
+shift [1, 3]
+21 - 1*3^2 = 12
+
+(12/9) % 3 = 2
+shift [2, 1, 3]
+12 - 2*3^3
+
+function n2str(n) {
+  let ans = []
+  while (n > 0){
+    let tmp = Math.ceil( (n/Math.pow(l, ans.length)) % l )
+    if (tmp === 0) {tmp = l}
+    console.log(tmp)
+    n = n - tmp*Math.pow(l,ans.length)
+    ans.unshift(tmp)
+  }
+  return ans
+}
