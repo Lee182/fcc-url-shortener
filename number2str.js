@@ -41,6 +41,8 @@ module.exports = {
     return encodearr( n2arr(n) )
   },
   reverse: function(str){
-    return arr2n( decodestr(str) )
+    var tmp = decodestr(str)
+    if (tmp === false) {return Error('a character not part of alphabet')}
+    return arr2n( tmp )
   }
 }
