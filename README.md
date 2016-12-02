@@ -38,7 +38,7 @@ purpose: returns a shortened url for a given url, the shortened path is the `_id
 `GET /info/aoPCz` will respond with `null`
 
 ## Setup
-```shell
+```
 $ npm install
 $ npm build
 $ npm start
