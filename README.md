@@ -4,7 +4,7 @@
 ## Description
 This microservice shortens urls and stores them within a mongodb database.
 
-The number2str.js file converts a number (base 10), into a alphanumric string (base 62), so will can take exponentially more options at a shorter length than using a number. The function can also be inversed so saves disk space.
+The number2str.js file converts a number (base 10), into a alphanumeric string (base 62), so will can take exponentially more options at a shorter length than using a number. The function can also be inversed ie convert a alphanumeric string to number so saves disk space.
 
 ## API
 ### POST / {url: 'http://blogjono.com'}
