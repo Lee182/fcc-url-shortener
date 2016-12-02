@@ -1,0 +1,10 @@
+html
+  head
+    title url-shortener
+    link(rel='stylesheet' href='/styl.css')
+  body
+    header Article
+    #main
+      article.markdown
+        include:markdown-it ../README.md
+      script(src='/bundle.js')
