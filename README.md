@@ -37,7 +37,15 @@ purpose: returns a shortened url for a given url, the shortened path is the `_id
 ```
 `GET /info/aoPCz` will respond with `null`
 
-### Author & Licence
+## Setup
+```shell
+$ npm install
+$ npm build
+$ npm start
+```
+## Author & Licence
 Author: **[Jonathan T L Lee](https://github.com/Lee182)**
 
 Licence: MIT
+
+Repo: https://github.com/Lee182/fcc-url-shortener
