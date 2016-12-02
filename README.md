@@ -43,6 +43,12 @@ $ npm install
 $ npm build
 $ npm start
 ```
+You will also have to make js file called keys and set up your mongodb database
+```javascript
+  module.exports = {
+    "mongourl": "mongodb://user:pwd@domain.com:port/db"
+  }
+```
 ## Author & Licence
 Author: **[Jonathan T L Lee](https://github.com/Lee182)**
 
