@@ -3,8 +3,12 @@ html
     title url-shortener
     link(rel='stylesheet' href='/styl.css')
   body
-    header Article
     #main
+      article#app
+        .url_form
+          input.url_input(placeholder='type a link to shorten')
+          button.url_submit enter
+        .gradient
       article.markdown
         include:markdown-it ../README.md
       script(src='/bundle.js')
