@@ -54,4 +54,4 @@ Author: **[Jonathan T L Lee](https://github.com/Lee182)**
 
 Licence: MIT
 
-Repo: https://github.com/Lee182/fcc-url-shortener
+Repo: [https://github.com/Lee182/fcc-url-shortener]( https://github.com/Lee182/fcc-url-shortener)

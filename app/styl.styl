@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans')
 body
+  font-family 'Josefin Sans', sans-serif
   background white
   padding 0
   margin 0
 $bg = #ffdd84
+$bgerr = #a2084f
 #main
   overflow hidden
 #app
@@ -13,36 +15,64 @@ $bg = #ffdd84
   justify-content center
   align-items center
   background $bg
+  transition background .5s ease
+  &.err-flash
+    background $bgerr
+  .gradient
+    background-image linear-gradient(to bottom, transparent 0%, #FFFFFF 50%)
+    position absolute
+    width 100%
+    padding 3em 0
+    top calc(100% - 3em)
+    left 0
   .url_form
     width 100%
     max-width 600px
     color #444444
     position relative
     z-index 1
+    display flex
+    flex-flow row wrap
+    transition opacity .2s ease
+    &.hide
+      opacity 0
+    &.hidden
+      visibility hidden
     &.valid .url_submit
       background #fff4da
-    .url_input
-    .url_submit
-      font-size 2em
-      font-family 'Josefin Sans', sans-serif
-      border 1px solid #e0e0e0
-      padding .5em
-      margin 0
-    .url_submit
-      color #777777
-    .url_input
-      width 100%
-      max-width 500px
+  .url_submit
+    color #777777
+    background #F0F0F0
+  .url_input
+    flex 1
+    max-width 500px
+  .url_copy
+    background #F0F0F0
+  .url_reset
+    background #d89fff
+
 #app
   position relative
   padding 1em
-.gradient
-  background-image linear-gradient(to bottom, $bg 0%, #FFFFFF 100%)
-  position absolute
+#card
+  z-index 1
+  max-width 600px
   width 100%
-  padding 3em 0
-  bottom 0
-  left 0
+  position relative
+.url_result
+  transition opacity .2s ease
+  &.hide
+    opacity 0
+  &.hidden
+    display none
+.large
+  font-size 2em
+  font-family 'Josefin Sans', sans-serif
+  border none
+  padding 0.5em
+  margin 0
+  display inline-block
+
 
 .markdown
   margin 0 auto
@@ -51,6 +81,8 @@ $bg = #ffdd84
   line-height 1
   max-width 960px
   padding 30px
+  // padding-top 4em
+
 
   h1, h2, h3, h4
     color #111111

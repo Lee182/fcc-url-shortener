@@ -1,13 +1,23 @@
 html
   head
     title url-shortener
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet' href='/styl.css')
   body
     #main
       article#app
-        .url_form
-          input.url_input(placeholder='type a link to shorten')
-          button.url_submit enter
+        #card
+          .url_form
+            input.large.url_input(placeholder='type a link to shorten')
+            button.large.url_submit enter
+          .url_result.hide.hidden
+            .large.url_long http://blogjono.com
+            .large <->
+            .large.url_short http://localhost:8080/a
+            br
+            .large.url_copy copy short_url
+            .large.url_reset <- go back
         .gradient
       article.markdown
         include:markdown-it ../README.md
