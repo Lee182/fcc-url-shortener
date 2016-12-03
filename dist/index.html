@@ -1,0 +1,47 @@
+<html><head><title>url-shortener</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="stylesheet" href="/styl.css"/></head><body><div id="main"><article id="app"><div id="card"><div class="url_form"><input class="large url_input" placeholder="type a link to shorten"/><button class="large url_submit">enter</button></div><div class="url_result hide hidden"><div class="large url_long">http://blogjono.com</div><div class="large"><-></div><div class="large url_short">http://localhost:8080/a</div><br/><div class="large url_copy">copy short_url</div><div class="large url_reset"><- go back</div></div></div><div class="gradient"></div></article><article class="markdown"><h1>fcc-url-shortener</h1>
+<ul>
+<li>Date Started: 2016-11-30</li>
+<li>Date Completed: 2016-12-02</li>
+</ul>
+<h2>Description</h2>
+<p>This microservice shortens urls and stores them within a mongodb database.</p>
+<p>The number2str.js file converts a number (base 10), into a alphanumeric string (base 62), so will can take exponentially more options at a shorter length than using a number. The function can also be inversed ie convert a alphanumeric string to number so saves disk space.</p>
+<h2>API</h2>
+<h3>POST / {url: 'http://blogjono.com'}</h3>
+<p>purpose: returns a shortened url for a given url, the shortened path is the <code>_id</code> in the response</p>
+<pre><code>{
+  _id: &quot;a&quot;,
+  creationDate: &quot;2016-12-02T12:47:21.164Z&quot;,
+  url: &quot;http://blogjono.com&quot;
+}
+</code></pre>
+<h3>POST / {url: 'notvalidurl.com'}</h3>
+<pre><code>{ err: &quot;invalid url&quot; }
+</code></pre>
+<h3>GET /:short_url</h3>
+<p><code>GET /a</code> will redirect with code 301 to 'http://blogjono.com'</p>
+<p><code>GET /aoPCz</code> isn't found in the database therefor will redirect to root</p>
+<h3>GET /info/:short_url</h3>
+<p><code>GET /info/a</code> will respond with</p>
+<pre><code>{
+  _id: &quot;a&quot;,
+  creationDate: &quot;2016-12-02T12:47:21.164Z&quot;,
+  url: &quot;http://blogjono.com&quot;
+}
+</code></pre>
+<p><code>GET /info/aoPCz</code> will respond with <code>null</code></p>
+<h2>Setup</h2>
+<pre><code>$ npm install
+$ npm build
+$ npm start
+</code></pre>
+<p>You will also have to make js file called keys and set up your mongodb database</p>
+<pre><code class="language-javascript">  module.exports = {
+    &quot;mongourl&quot;: &quot;mongodb://user:pwd@domain.com:port/db&quot;
+  }
+</code></pre>
+<h2>Author &amp; Licence</h2>
+<p>Author: <strong><a href="https://github.com/Lee182">Jonathan T L Lee</a></strong></p>
+<p>Licence: MIT</p>
+<p>Repo: <a href="https://github.com/Lee182/fcc-url-shortener">https://github.com/Lee182/fcc-url-shortener</a></p>
+</article><script src="/bundle.js"></script></div></body></html>
