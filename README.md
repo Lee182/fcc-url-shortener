@@ -1,6 +1,10 @@
 # fcc-url-shortener
   * Date Started: 2016-11-30
   * Date Completed: 2016-12-02
+
+## demo
+visit [https://szs.herokuapp.com/](https://szs.herokuapp.com/)
+
 ## Description
 This microservice shortens urls and stores them within a mongodb database.
 
