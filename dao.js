@@ -3,7 +3,8 @@ const url_validation = require('./url-validation.js')
 
 const Mongo = require('mongodb')
 let MongoClient = Mongo.MongoClient
-let mongourl = require('./keys.js').mongourl
+console.log(process.env.MONGOURL)
+let mongourl = process.env.MONGOURL || require('./keys.js').mongourl
 let o = {}
 o.ObjectId = Mongo.ObjectId
 let count = 0
