@@ -10,6 +10,13 @@ app.use(bodyParser.json()) // populates 'req.body'
 app.use('/', express.static(__dirname + '/dist'))
 // filenames must include a dot '.' so doesn't conflict with alphabet of urls
 
+app.use(function(req, res, next) {
+  // cross origin request  so friendly :)
+  res.header("Access-Control-Allow-Origin", "*")
+  res.header("Access-Control-Allow-Headers", "X-Requested-With")
+  next()
+});
+
 app.post('/', function(req,res){
   // insert or borrow a short string of url
   let url = req.body.url
